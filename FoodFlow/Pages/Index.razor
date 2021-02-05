@@ -5,3 +5,24 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<ul>
+    <li> Drawing of an ingredient: @ingredient </li>
+    <li> Test of an ingredient: @ingr.name </li>
+
+    @foreach (var ingr in ingredients)
+    {
+        <li>@ingr.name</li>
+    }
+</ul>
+
+@code {
+    private string ingredient = "test";
+
+    private Business.Ingredient.Ingredient ingr
+        = Business.Ingredient.createIngredient("tomato", 5.0, "unit", "tomato.jpg");
+    private Business.Ingredient.Ingredient turkey
+        = Business.Ingredient.turkey;
+    private List<Business.Ingredient.Ingredient> ingredients
+        = Business.Ingredient.ingredients.ToList();
+} 
