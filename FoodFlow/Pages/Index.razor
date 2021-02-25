@@ -19,10 +19,10 @@ Welcome to your new app.
 @code {
     private string ingredient = "test";
 
-    private Business.Ingredient.Ingredient ingr
-        = Business.Ingredient.createIngredient("tomato", 5.0, "unit", "tomato.jpg");
-    private Business.Ingredient.Ingredient turkey
-        = Business.Ingredient.turkey;
-    private List<Business.Ingredient.Ingredient> ingredients
-        = Business.Ingredient.ingredients.ToList();
+    private Business.DomainTypes.Ingredient ingr
+        = Business.DomainTypes.createIngredient("tomato", 5.0, "unit", "tomato.jpg");
+    private Business.DomainTypes.Ingredient turkey
+        = Business.Examples.turkey;
+    private List<Business.DomainTypes.Ingredient> ingredients
+        = Business.Examples.ingredients.ToList();
 } 

@@ -1,38 +1,63 @@
 ﻿namespace FoodFlow.Business
 
-module Say =
+module Library =
+    open DomainTypes
+
     let hello name =
         printfn "Hello %s" name
 
-module Ingredient =
-    type Ingredient =
-        { name : string;
-          qty  : float;
-          unit : string;
-          img  : string;
-        }
+    let addIngredient ingredient =
+        let name = ingredient.name
+        printfn "Hello %s" name
 
-    let createIngredient name qty unit img =
-        { name = name;
-          qty = qty;
-          unit = unit;
-          img = img
-        }
+    //let addIngredient (col, row) ingredient board
+    //    let
+    //        (dx, dy) = calculateMove (col, row)
 
-    // --- Example ingredients
-    let ingredients = 
-        [ createIngredient "Tomato" 4. "piece" "img/tomato.jpg";
-          createIngredient "Onion" 1. "piece" "img/onion.jpg";
-          createIngredient "Salad" 3. "leaves" "img/salad.jpg";
-          createIngredient "Turkey" 220. "gram" "img/turkey.jpg";
-        ]
+    // --------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------
+            // because we want to build a function here that sort of does:
+            //  :: Ingredient -> HTML
+            // we should research into:
+            //  - Fable / Elmish (do it on the frontend JS)
+            //  - Giraffe?       (do it on the backend?)
+            //  - F# Blazor (Bolero?) (do it on the frontend WASM)
 
-    let turkey             = createIngredient "Turkey" 220. "gram" "img/turkey.jpg"
-    let oliveoil           = createIngredient "Olive Oil" 1. "el" "img/olijfolie.jpg"
-    let pezo               = createIngredient "Salt & Pepper" 1. "snuifje" "img/pezo.jpg"
-    let artisjokhart       = createIngredient "Artisjokhart" 3. "stuks" "img/artisjokhart.jpg"
-    let zongedroogdtomaten = createIngredient "Zongedroogde tomaten" 4. "stuks" "img/zongedroogd-tomaten.jpg"
-    let littlegem          = createIngredient "Little gem" 1. "kropje" "img/littlegem.jpg"
-    let macadamia          = createIngredient "Macadamia noten" 1. "handvol" "img/macadamia.jpg"
-    let rijst              = createIngredient "Rice" 1. "zakje" "img/rice.png"
+
+            // Current plan:
+            // - create in F# a whole logic for creating Recipes
+            // - create in Blazor a whole logic for drawing Recipes / Ingredients / Steps ?
+            //          (based on the graphics library from Elm)
+    // --------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+    //toForm : Ingredient -> Form
+    //let toForm { img  = img } =
+        
+    //addIngredient : (Float, Float) -> Ingredient -> Form -> Form
+    //addIngredient (col, row) ingredient board =
+    //    let
+    //        (dx, dy) = calculateMove(col, row)
+    //        blockForm = toForm ingredient |> move (dx, dy)
+    //    in group [board, blockForm]
+
+//emptyIngredient : Form
+//emptyIngredient = 
+//    let tileSize = toFloat size
+//        scale = 0.6
+//        scaleMargin = 0.5 * (1-scale)*tileSize
+//        transform = Collage.scale scale >> Collage.move (-scaleMargin, scaleMargin/2)
+//        square = Collage.outlined (Collage.dashed Color.gray) (Collage.square 100)
+//        rect w h = Collage.filled Color.gray (Collage.rect w h)
+//        thick = 2
+//        cross  = group [ rect 20 thick, rect thick 20 ]
+//    in group [square, cross] |> transform
+
 

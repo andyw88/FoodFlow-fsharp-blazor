@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Ingredient.fs" />
+    <Compile Include="DomainTypes.fs" />
     <Compile Include="Library.fs" />
   </ItemGroup>
 
